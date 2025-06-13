@@ -78,7 +78,7 @@ cd ~/apps/<YOUR_APP>
 nano .env
 
 # .env example
-PORT=3000
+PORT=
 NODE_ENV=production
 DB_HOST=localhost
 DB_USER=appuser
@@ -138,7 +138,7 @@ server {
     server_name yourdomain.com www.yourdomain.com;
 
     location / {
-        proxy_pass http://127.0.0.1:3000;
+        proxy_pass ;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
