@@ -132,6 +132,11 @@ sudo systemctl start nginx
 
 ### 2. Configure virtual host
 
+```
+#create a file
+/etc/nginx/sites-available/mytwicket.com
+```
+
 ```bash
 server {
     listen 80;
