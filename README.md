@@ -153,6 +153,11 @@ sudo ln -s /etc/nginx/sites-available/<YOUR_APP> /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
 ```
+```
+# Finding nginx files
+cd /etc/nginx/sites-available
+ls
+```
 ## 🔒 SSL with Certbot
 
 ```bash
