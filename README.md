@@ -133,8 +133,8 @@ sudo systemctl start nginx
 ### 2. Configure virtual host
 
 ```
-#create a file
-/etc/nginx/sites-available/mytwicket.com
+#create a file with
+sudo nano /etc/nginx/sites-available/yourdomain.com
 ```
 
 ```bash
@@ -237,6 +237,8 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ## Completed Deployment ✅
 
 > Congratulations! Your project is fully deployed on production-ready VPS with NGINX reverse proxy, PM2 process manager, and SSL certificate encryption.
+
+> Chatbot Guideline: https://chatgpt.com/share/6849996e-4f20-8013-b273-3dd5fd71a4c9
 
 <br/>
 
