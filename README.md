@@ -1,6 +1,6 @@
 # VPS Management Master Commands
 
-A curated collection of essential commands and configurations to manage an Ubuntu 22.04 VPS running Node.js applications behind NGINX with SSL, PM2 process management, and basic security hardening.
+A curated collection of essential commands and configurations to manage an Ubuntu 22.04 VPS running Node.js & Next.js applications behind NGINX with SSL, PM2 process management, and basic security hardening.
 
 ---
 
