@@ -19,6 +19,8 @@ A curated collection of essential commands and configurations to manage an Ubunt
 11. Monitoring & Logs
 12. Reboot & Maintenance
 13. Security Enhancements
+14. SSH Key Method ( Github Repo On VPS Setup)
+15. After Pulling Code From Github
 
 ## 🔌 Prerequisites
 
@@ -234,11 +236,75 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 
 ```
 
+## SSH Key Method 
+
+```
+# check ssh key
+ls -al ~/.ssh
+
+# Generate new SSH key
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+# It will ask where to save the key:
+Enter file in which to save the key (/home/youruser/.ssh/id_ed25519):
+
+# Add your SSH key to ssh-agent
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_ed25519
+
+# Copy your public SSH key
+cat ~/.ssh/id_ed25519.pub
+
+# Add SSH key to GitHub
+
+1) Go to: GitHub SSH Keys
+
+2) Click: New SSH key
+
+3) Title: (any name, e.g. VPS Key)
+
+4) Paste your copied public key.
+
+# Test the connection
+ssh -T git@github.com
+
+# Use SSH URL for your repo
+git clone git@github.com:Siratul804/twicket-server.git
+
+```
+
+> Chatbot Guideline : https://chatgpt.com/share/68749b7c-be58-8013-9367-79be5a52fa7a
+
 ## Completed Deployment ✅
 
 > Congratulations! Your project is fully deployed on production-ready VPS with NGINX reverse proxy, PM2 process manager, and SSL certificate encryption.
 
 > Chatbot Guideline: https://chatgpt.com/share/6849996e-4f20-8013-b273-3dd5fd71a4c9
+
+## Full Steps (Safe Pattern after Every git pull):
+
+```
+cd ~/your-project-folder
+
+# Step 1: Pull changes
+git pull origin main --force
+
+# Step 2: Reinstall deps (optional but safe)
+cd backend
+npm install
+
+cd ../frontend
+npm install
+
+# Step 3: Rebuild frontend
+npm run build
+
+# Step 4: Restart PM2 processes
+pm2 restart backend
+pm2 restart frontend
+
+```
 
 <br/>
 
